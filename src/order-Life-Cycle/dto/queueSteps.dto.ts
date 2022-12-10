@@ -1,11 +1,9 @@
+import { Steps } from "./steps";
+
 export class QueueSteps {
-    
-    id: string;
-    
-    queue: string;
 
-    done: boolean;
+    statusPedido: string;
 
-    isManual: boolean;
+    steps: Steps[];
 
 }

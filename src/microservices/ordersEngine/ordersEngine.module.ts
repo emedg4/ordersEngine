@@ -1,20 +1,20 @@
 import { DynamicModule, Module } from '@nestjs/common';
-import { OrderLifeCycleServiceMS } from './orderLifeCycle.service';
 import { ClientsModule, Transport } from '@nestjs/microservices'
 import { ConfigService } from '@nestjs/config'
+import { OrdersEngineService } from './ordersEngine.service';
 
 interface RmqModuleOptions {
   name: string
 }
 
 @Module({
-  providers: [OrderLifeCycleServiceMS],
-  exports: [OrderLifeCycleServiceMS]
+  providers: [OrdersEngineService],
+  exports: [OrdersEngineService]
 })
-export class OrderLifeCycleModuleMS {
+export class OrdersEngineModule {
   static register({ name }: RmqModuleOptions ): DynamicModule {
     return {
-      module: OrderLifeCycleModuleMS,
+      module: OrdersEngineModule,
       imports: [
         ClientsModule.registerAsync([
           {

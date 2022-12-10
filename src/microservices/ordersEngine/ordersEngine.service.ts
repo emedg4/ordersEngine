@@ -4,7 +4,7 @@ import { ConfigService } from '@nestjs/config';
 
 
 @Injectable()
-export class OrderLifeCycleServiceMS {
+export class OrdersEngineService {
     constructor(private readonly configService: ConfigService){}
     getOptions(queue: string, noAck = false): RmqOptions {
         return {
@@ -14,7 +14,9 @@ export class OrderLifeCycleServiceMS {
                 queue: queue,
                 noAck,
                 persistent: true
+
             }
+
         }
     }
 

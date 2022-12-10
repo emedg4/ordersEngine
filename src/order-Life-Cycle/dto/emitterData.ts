@@ -4,6 +4,8 @@ export class EmmiterData {
 
     stepNumber: number;
 
+    perStatusStep: number;
+
     queue: string;
 
     isNew: boolean;
